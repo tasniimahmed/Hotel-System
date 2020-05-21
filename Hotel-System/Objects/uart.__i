@@ -3,4 +3,4 @@
 -ID:\FSUK\Keil\ARM\CMSIS\5.6.0\CMSIS\Core\Include
 -ID:\FSUK\Keil\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
 -D__UVISION_VERSION="529" -D_RTE_ -DTM4C123GH6PM
--o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d "main.c"
+-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d "UART\UART.c"
