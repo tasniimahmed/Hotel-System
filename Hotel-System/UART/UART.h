@@ -4,3 +4,4 @@
 void UART_INIT(void); 
 void UART_TRANS_CHAR(uint16_t x);
 uint16_t UART_REC_CHAR(void);
+void UART_TRANS_STRING(char* str);

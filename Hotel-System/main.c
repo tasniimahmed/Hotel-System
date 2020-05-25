@@ -24,7 +24,9 @@ int main(){
 	
 	
 	while(1){
+		UART_TRANS_STRING("Enter room number:");
 		uint16_t room_num= get_room_number();         //get room number
+		UART_TRANS_STRING("Enter room status:");
 		room_status= set_status();                    //room is now occupied
 		//room_status=1;
 		
