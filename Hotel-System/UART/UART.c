@@ -15,12 +15,12 @@ void UART_INIT(void){
  
 }
 
-void UART_TRANS_CHAR(char x){
+void UART_TRANS_CHAR(uint16_t x){
 	while((UART1_FR_R&UART_FR_TXFF) !=0);  //waiting for FIFO to be empty
 	UART1_DR_R=x;
 }
 
-char UART_REC_CHAR(void){
+uint16_t UART_REC_CHAR(void){
 	
 	while((UART1_FR_R&UART_FR_RXFE) !=0);
 	return UART1_DR_R;

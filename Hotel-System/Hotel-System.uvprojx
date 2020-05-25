@@ -397,6 +397,16 @@
               <FileType>5</FileType>
               <FilePath>.\UART\UART.h</FilePath>
             </File>
+            <File>
+              <FileName>Keypad.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Keypad\Keypad.c</FilePath>
+            </File>
+            <File>
+              <FileName>Keypad.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Keypad\Keypad.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
