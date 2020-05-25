@@ -7,11 +7,11 @@
 #define OCCUPIED 1
 #define CLEANING 2
 
-void Turn_on_lock();
-void Turn_off_lock();
-uint16_t get_room_number();
-uint16_t* set_password();
-uint16_t set_status();
+void Turn_on_lock(void);
+void Turn_off_lock(void);
+uint16_t get_room_number(void);
+uint16_t* set_password(void);
+uint16_t set_status(void);
 uint16_t valid( uint16_t* t_pw);
 
 int main(){
@@ -50,30 +50,31 @@ int main(){
 	}
 }
 
-void Turn_on_lock(){
+void Turn_on_lock(void){
 	SYSCTL_RCGCGPIO_R|=0x20; //activate portF
 	GPIO_PORTF_DIR_R|=0x0E;  //pin 1,2,3 ouyput
 	GPIO_PORTF_DEN_R|=0X0E;
 	GPIO_PORTF_DATA_R=0x0E;
 }
-void Turn_off_lock(){
+void Turn_off_lock(void){
 	SYSCTL_RCGCGPIO_R|=0x20; //activate portF
 	GPIO_PORTF_DIR_R|=0x0E;  //pin 1,2,3 ouyput
 	GPIO_PORTF_DEN_R|=0X0E;
 	GPIO_PORTF_DATA_R=0x00;
 }
 
-uint16_t get_room_number(){
+uint16_t get_room_number(void){
 	return UART_REC_CHAR();
 }
-uint16_t set_status(){
+uint16_t set_status(void){
 	return UART_REC_CHAR();
 }
-uint16_t* set_password(){
+uint16_t* set_password(void){
 	static uint16_t password_set[4];
 	for (int i=0; i<PASSWORD_SIZE; i++){
 		password_set[i]= UART_REC_CHAR();
 	}
+	return password_set;
 }
 uint16_t valid(uint16_t* t_pw){
 	uint16_t pw[4];

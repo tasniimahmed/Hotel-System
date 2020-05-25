@@ -24,5 +24,4 @@ uint16_t UART_REC_CHAR(void){
 	
 	while((UART1_FR_R&UART_FR_RXFE) !=0);
 	return UART1_DR_R;
-	
 }
